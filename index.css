@@ -13,6 +13,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    
 }
 
 header h1 {
@@ -112,4 +113,19 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#combos,
+#bebidas,
+#postres {
+    scroll-margin-top: 60px; /* o prueba con 60px si sigue bajo */
+}
+#combos,
+#bebidas,
+#postres {
+    scroll-margin-top: 150px; /* ajusta este número a la altura real de tu header */
 }
