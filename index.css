@@ -129,3 +129,27 @@ html {
 #postres {
     scroll-margin-top: 150px; /* ajusta este número a la altura real de tu header */
 }
+
+#menu-button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+#menu-button:hover {
+    color: #ffca28;
+}
+
+#dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+#dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}

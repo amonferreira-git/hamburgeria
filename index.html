@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Tradicional - Menú</title>
+    <title>La Tradicional</title>
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -20,6 +20,17 @@
 <li><a href="#postres">Postres</a></li>
             </ul>
         </nav>
+        <button id="menu-button" style="position: absolute; right: 20px; top: 20px; cursor: pointer;">
+            ☰
+        </button>
+        <div id="dropdown-menu" style="display: none; position: absolute; right: 20px; top: 60px; background: white; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+            <ul style="list-style: none; margin: 0; padding: 10px;">
+                <li><a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">Home</a></li>
+                <li><a href="#hamburguesas">Menú</a></li>
+                <li><a href='#' onclick="alert('Información de contacto: 123-456-789');">Información</a></li>
+            </ul>
+        </div>
+        
     </header>
 
     <main>
@@ -99,13 +110,28 @@
 
     <script>
         window.onload = function() {
-            // Elimina cualquier hash (#combos, etc.) de la URL
+            
             history.replaceState(null, null, window.location.pathname);
-            // Fuerza scroll al principio
+            
             window.scrollTo(0, 0);
         };
     </script>
     
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+    
+        menuButton.addEventListener('click', () => {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'none' ? 'block' : 'none';
+        });
+    
         
+        window.addEventListener('click', (e) => {
+            if (!menuButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    </script>
+    
 </body>
 </html>
